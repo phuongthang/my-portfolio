@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phương Công Thắng — Fullstack Developer</title>
+  <meta name="description"
+    content="Portfolio của Phương Công Thắng, Fullstack Developer xây dựng sản phẩm web nhanh, đẹp và có thể mở rộng." />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#07070b" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__count"><span id="loaderNum">0</span><small>%</small></div>
+    <div class="loader__text">Đang khởi tạo trải nghiệm…</div>
+    <div class="loader__bar"><i></i></div>
+  </div>
+
+  <!-- Page transition curtain -->
+  <div class="curtain" aria-hidden="true"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Scroll progress -->
+  <div class="progress" aria-hidden="true"><i></i></div>
+
+  <!-- Background -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="nav">
+    <a href="#home" class="nav__logo magnetic" data-cursor="Home" aria-label="Phương Công Thắng — Home"><img
+        src="assets/avatar.jpg" alt="" width="44" height="44" /></a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#about" data-text="Giới thiệu">Giới thiệu</a>
+      <a href="#skills" data-text="Kỹ năng">Kỹ năng</a>
+      <a href="#projects" data-text="Dự án">Dự án</a>
+      <a href="#experience" data-text="Kinh nghiệm">Kinh nghiệm</a>
+      <a href="#contact" data-text="Liên hệ">Liên hệ</a>
+    </nav>
+    <div class="lang magnetic" id="lang" role="group" aria-label="Language">
+      <button type="button" data-l="vi" data-cursor="VI">VI</button><i></i><button type="button" data-l="en"
+        data-cursor="EN">EN</button>
+    </div>
+    <button class="nav__burger magnetic" id="burger" aria-label="Menu"><i></i><i></i></button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero__tag reveal-up"><span class="dot"></span> Sẵn sàng nhận dự án mới — 2026</div>
+      <h1 class="hero__title" aria-label="Code sạch, hệ thống mạnh, AI thông minh">
+        <span class="line"><span class="line__in">Code sạch,</span></span>
+        <span class="line"><span class="line__in">hệ thống <em>mạnh,</em></span></span>
+        <span class="line"><span class="line__in">AI <em class="grad">thông minh.</em></span></span>
+      </h1>
+      <div class="hero__bottom">
+        <p class="hero__desc reveal-up">
+          Xin chào, mình là <strong>Phương Công Thắng</strong> — Fullstack Team Lead &amp; AI Engineer với 6 năm kinh
+          nghiệm.
+          Chuyên Java Spring Boot, React và Agentic AI, xây dựng hệ thống tải cao và dẫn dắt đội ngũ giải bài toán kiến
+          trúc phức tạp.
+        </p>
+        <div class="hero__cta reveal-up">
+          <a href="#projects" class="btn btn--primary magnetic" data-cursor="Xem">
+            <span>Xem dự án</span>
+            <svg viewBox="0 0 24 24" width="18" height="18">
+              <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn--ghost magnetic" data-cursor="Chat"><span>Liên hệ</span></a>
+          <a href="assets/Phuong-Cong-Thang-Fullstack-Developer.pdf" download="Phuong-Cong-Thang-CV.pdf"
+            class="btn btn--ghost magnetic" data-cursor="CV">
+            <svg viewBox="0 0 24 24" width="18" height="18">
+              <path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>Tải CV</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero__scroll reveal-up"><span>Cuộn xuống</span><i></i></div>
+      <div class="hero__code reveal-up" aria-hidden="true">
+        <div class="code">
+          <div class="code__bar"><i></i><i></i><i></i><span>developer.ts</span></div>
+          <pre><code><span class="c-k">const</span> <span class="c-v">dev</span> = {
+  <span class="c-p">name</span>: <span class="c-s">"Phương Công Thắng"</span>,
+  <span class="c-p">dob</span>: <span class="c-s">"25-07-2000"</span>,
+  <span class="c-p">email</span>: <span class="c-s">"phuongthangcnpm4@gmail.com"</span>,
+  <span class="c-p">phone</span>: <span class="c-s">"0344771283"</span>,
+  <span class="c-p">stack</span>: [<span class="c-s">"SpringBoot"</span>, <span class="c-s">"ReactJs"</span>],
+  <span class="c-p">role</span>: <span class="c-s">"Team Lead"</span>,
+};<span class="caret"></span></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>React</span><b>✦</b><span>Next.js</span><b>✦</b><span>TypeScript</span><b>✦</b><span>Java</span><b>✦</b><span>Spring
+          Boot</span><b>✦</b><span>Node.js</span><b>✦</b><span>NestJS</span><b>✦</b><span>MySQL</span><b>✦</b><span>PostgreSQL</span><b>✦</b><span>MongoDB</span><b>✦</b><span>Docker</span><b>✦</b><span>AWS</span><b>✦</b><span>GraphQL</span><b>✦</b>
+        <span>React</span><b>✦</b><span>Next.js</span><b>✦</b><span>TypeScript</span><b>✦</b><span>Java</span><b>✦</b><span>Spring
+          Boot</span><b>✦</b><span>Node.js</span><b>✦</b><span>NestJS</span><b>✦</b><span>MySQL</span><b>✦</b><span>PostgreSQL</span><b>✦</b><span>MongoDB</span><b>✦</b><span>Docker</span><b>✦</b><span>AWS</span><b>✦</b><span>GraphQL</span><b>✦</b>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="section__head">
+        <span class="eyebrow">01 — Giới thiệu</span>
+      </div>
+      <div class="about__grid">
+        <figure class="avatar tilt" data-cursor="Hi!">
+          <div class="avatar__ring"></div>
+          <img src="assets/avatar.jpg" alt="Phương Công Thắng" width="640" height="640" loading="eager" />
+          <figcaption><span class="dot"></span> Fullstack Team Lead</figcaption>
+        </figure>
+        <p class="about__text split-words">
+          Thủ khoa Đại học Điện lực, hai lần đạt Nhân viên của năm. Mình dẫn dắt đội 8–20 người, xây dựng hệ thống nhắn
+          tin realtime, kiến trúc Agentic RAG với Hybrid Search và tận dụng AI để rút ngắn 40% thời gian phát triển — từ
+          thiết kế API, tối ưu truy vấn đến giao diện mượt mà từng chi tiết.
+        </p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b data-count="6">0</b><sup>+</sup><span>Năm kinh nghiệm</span></div>
+        <div class="stat"><b data-count="20">0</b><sup>+</sup><span>Thành viên trong team lớn nhất từng dẫn dắt</span>
+        </div>
+        <div class="stat"><b data-count="1000">0</b><sup>+</sup><span>Người dùng đồng thời trên hệ thống chat</span>
+        </div>
+        <div class="stat"><b data-count="40">0</b><sup>%</sup><span>Tăng tốc phát triển nhờ AI</span></div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section skills">
+      <div class="section__head">
+        <span class="eyebrow">02 — Kỹ năng</span>
+        <h2 class="h2 split-lines">Full stack, <em>không giới hạn.</em></h2>
+      </div>
+      <div class="skills__grid">
+        <article class="card tilt" data-cursor="Frontend">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="14" rx="2.5" />
+              <path d="M3 8.5h18" />
+              <path d="M10 12.5l-2 1.5 2 1.5M14 12.5l2 1.5-2 1.5" />
+              <path d="M8 21h8" />
+            </svg></div>
+          <h3>Frontend</h3>
+          <p>Giao diện responsive, hiệu năng cao, tối ưu SEO và animation mượt.</p>
+          <ul class="chips">
+            <li>React</li>
+            <li>Next.js</li>
+            <li>Nuxt.js</li>
+            <li>TypeScript</li>
+            <li>Angular</li>
+            <li>GraphQL</li>
+          </ul>
+          <div class="meter"><i style="--v:92%"></i></div>
+        </article>
+        <article class="card tilt" data-cursor="Backend">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3.5" width="18" height="7" rx="2" />
+              <rect x="3" y="13.5" width="18" height="7" rx="2" />
+              <path d="M7 7h.01M7 17h.01M12 7h5M12 17h5" />
+            </svg></div>
+          <h3>Backend</h3>
+          <p>API bảo mật, kiến trúc sạch, hệ thống realtime tải cao.</p>
+          <ul class="chips">
+            <li>Java</li>
+            <li>Spring Boot</li>
+            <li>Spring Security</li>
+            <li>Keycloak</li>
+            <li>WebSocket/STOMP</li>
+            <li>Laravel</li>
+          </ul>
+          <div class="meter"><i style="--v:96%"></i></div>
+        </article>
+        <article class="card tilt" data-cursor="AI">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z" />
+              <path
+                d="M18.5 15l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9zM5.5 14.5l.7 1.6 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7 1.6-.7z" />
+            </svg></div>
+          <h3>AI &amp; Search</h3>
+          <p>Agentic RAG, tìm kiếm lai và tự động hóa bằng AI.</p>
+          <ul class="chips">
+            <li>RAG</li>
+            <li>Agentic Framework</li>
+            <li>Kafka</li>
+            <li>Elasticsearch</li>
+            <li>OCR/Vision</li>
+            <li>RabbitMQ</li>
+          </ul>
+          <div class="meter"><i style="--v:88%"></i></div>
+        </article>
+        <article class="card tilt" data-cursor="Data">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+              stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5.5" rx="8" ry="3" />
+              <path d="M4 5.5v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" />
+              <path d="M4 11.5v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" />
+            </svg></div>
+          <h3>Database &amp; DevOps</h3>
+          <p>Thiết kế schema, tối ưu truy vấn, container hóa và triển khai.</p>
+          <ul class="chips">
+            <li>MySQL</li>
+            <li>PostgreSQL</li>
+            <li>MongoDB</li>
+            <li>Redis</li>
+            <li>Docker</li>
+            <li>MinIO</li>
+          </ul>
+          <div class="meter"><i style="--v:90%"></i></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects">
+      <div class="section__head">
+        <span class="eyebrow">03 — Dự án nổi bật</span>
+        <h2 class="h2 split-lines">Những sản phẩm <em>tự hào.</em></h2>
+      </div>
+      <div class="projects__list">
+        <a href="#" class="project" data-cursor="Xem">
+          <span class="project__num">01</span>
+          <div class="project__info">
+            <h3>KnowXHub LMS</h3>
+            <p>Hệ thống quản lý học tập doanh nghiệp triển khai cho Viettel: SSO/IAM, tìm kiếm nhanh, họp video và bản
+              đồ.</p>
+            <ul class="chips">
+              <li>Spring Boot</li>
+              <li>Keycloak</li>
+              <li>Elasticsearch</li>
+              <li>Kafka</li>
+              <li>RabbitMQ</li>
+              <li>MySQL</li>
+            </ul>
+          </div>
+          <div class="project__thumb has-img img--cover" style="--a:#f4f4f6;--b:#f4f4f6"><img src="assets/knowxhub.png"
+              alt="KnowXHub LMS" loading="lazy" decoding="async" /></div>
+          <span class="project__arrow">↗</span>
+        </a>
+        <a href="#" class="project" data-cursor="Xem">
+          <span class="project__num">02</span>
+          <div class="project__info">
+            <h3>Beebot</h3>
+            <p>Nền tảng AI với Agentic RAG &amp; Hybrid Search, OCR/Vision và chăm sóc khách hàng đa kênh 24/7 qua Zalo.
+            </p>
+            <ul class="chips">
+              <li>Spring Boot</li>
+              <li>React</li>
+              <li>Elasticsearch</li>
+              <li>Kafka</li>
+              <li>Redis</li>
+              <li>PostgreSQL</li>
+            </ul>
+          </div>
+          <div class="project__thumb" style="--a:#00e0a4;--b:#4d7cff">
+            <div class="mock">
+              <div class="mock__bar"><i></i><i></i><i></i></div>
+              <div class="mock__body">
+                <div class="m-side"><span class="m-av"></span><span class="m-av"></span><span class="m-av"></span><span
+                    class="m-av"></span><span class="m-av"></span></div>
+                <div class="m-chat">
+                  <div class="m-msg l"><b style="width:70%"></b></div>
+                  <div class="m-msg r"><b style="width:55%"></b></div>
+                  <div class="m-msg l"><b style="width:85%"></b></div>
+                  <div class="m-msg r"><b style="width:40%"></b></div>
+                  <div class="m-input"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="project__arrow">↗</span>
+        </a>
+        <a href="#" class="project" data-cursor="Xem">
+          <span class="project__num">03</span>
+          <div class="project__info">
+            <h3>BeeChat</h3>
+            <p>Hệ thống giao tiếp realtime, caching SHA-256 tùy biến, hỗ trợ 200+ phiên chat đồng thời.</p>
+            <ul class="chips">
+              <li>Spring Boot</li>
+              <li>WebSocket/STOMP</li>
+              <li>Redis</li>
+              <li>Docker</li>
+            </ul>
+          </div>
+          <div class="project__thumb" style="--a:#00e0a4;--b:#4d7cff">
+            <div class="mock">
+              <div class="mock__bar"><i></i><i></i><i></i></div>
+              <div class="mock__body">
+                <div class="m-side"><span class="m-av"></span><span class="m-av"></span><span class="m-av"></span><span
+                    class="m-av"></span><span class="m-av"></span></div>
+                <div class="m-chat">
+                  <div class="m-msg l"><b style="width:70%"></b></div>
+                  <div class="m-msg r"><b style="width:55%"></b></div>
+                  <div class="m-msg l"><b style="width:85%"></b></div>
+                  <div class="m-msg r"><b style="width:40%"></b></div>
+                  <div class="m-input"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="project__arrow">↗</span>
+        </a>
+        <a href="#" class="project" data-cursor="Xem">
+          <span class="project__num">04</span>
+          <div class="project__info">
+            <h3>Lifenet-seimei</h3>
+            <p>Website bảo hiểm Nhật Bản: thiết kế dữ liệu với MicroCMS, tối ưu SEO và triển khai Docker production.</p>
+            <ul class="chips">
+              <li>Next.js</li>
+              <li>MicroCMS</li>
+              <li>Docker</li>
+              <li>SEO</li>
+            </ul>
+          </div>
+          <div class="project__thumb has-img img--cover" style="--a:#fff;--b:#fff"><img src="assets/lifenet-seimei.png"
+              alt="Lifenet-seimei" loading="lazy" decoding="async" /></div>
+          <span class="project__arrow">↗</span>
+        </a>
+        <a href="#" class="project" data-cursor="Xem">
+          <span class="project__num">05</span>
+          <div class="project__info">
+            <h3>Kansai Airport</h3>
+            <p>Vận hành môi trường WordPress quy mô lớn, quản lý team 10 người, giao đúng hạn và đúng ngân sách.</p>
+            <ul class="chips">
+              <li>WordPress</li>
+              <li>PHP</li>
+              <li>Docker</li>
+            </ul>
+          </div>
+          <div class="project__thumb has-img img--fit" style="--a:#a0eefc;--b:#a0eefc"><img
+              src="assets/kansai-airport.png" alt="Kansai Airport" loading="lazy" decoding="async" /></div>
+          <span class="project__arrow">↗</span>
+        </a>
+        <a href="#" class="project is-extra" data-cursor="Xem">
+          <span class="project__num">06</span>
+          <div class="project__info">
+            <h3>Mercari Ecosystem</h3>
+            <p>Phát triển và bảo trì giao diện cho hệ sinh thái Mercari, tối ưu việc lấy dữ liệu bằng GraphQL.</p>
+            <ul class="chips">
+              <li>Next.js</li>
+              <li>Nuxt.js</li>
+              <li>GraphQL</li>
+            </ul>
+          </div>
+          <div class="project__thumb has-img img--cover" style="--a:#fff;--b:#fff"><img src="assets/mercari.png"
+              alt="Mercari Ecosystem" loading="lazy" decoding="async" /></div>
+          <span class="project__arrow">↗</span>
+        </a>
+        <a href="#" class="project is-extra" data-cursor="Xem">
+          <span class="project__num">07</span>
+          <div class="project__info">
+            <h3>Jacic</h3>
+            <p>Dự án lớn với đội frontend 8–20 người: định nghĩa kiến trúc nền tảng và duy trì chuẩn code review chặt
+              chẽ.</p>
+            <ul class="chips">
+              <li>Frontend Lead</li>
+              <li>React</li>
+              <li>Code Review</li>
+            </ul>
+          </div>
+          <div class="project__thumb has-img img--logo" style="--a:#fff;--b:#fff"><img src="assets/jacic.png"
+              alt="Jacic" loading="lazy" decoding="async" /></div>
+          <span class="project__arrow">↗</span>
+        </a>
+        <a href="#" class="project is-extra" data-cursor="Xem">
+          <span class="project__num">08</span>
+          <div class="project__info">
+            <h3>NTT</h3>
+            <p>Dự án lớn với đội frontend 8–20 người: định nghĩa kiến trúc nền tảng và duy trì chuẩn code review chặt
+              chẽ.</p>
+            <ul class="chips">
+              <li>Frontend Lead</li>
+              <li>React</li>
+              <li>Code Review</li>
+            </ul>
+          </div>
+          <div class="project__thumb has-img img--logo" style="--a:#fff;--b:#fff"><img src="assets/ntt.webp" alt="NTT"
+              loading="lazy" decoding="async" /></div>
+          <span class="project__arrow">↗</span>
+        </a>
+        <a href="#" class="project is-extra" data-cursor="Xem">
+          <span class="project__num">09</span>
+          <div class="project__info">
+            <h3>Kondate</h3>
+            <p>Dự án lớn với đội frontend 8–20 người: định nghĩa kiến trúc nền tảng và duy trì chuẩn code review chặt
+              chẽ.</p>
+            <ul class="chips">
+              <li>Frontend Lead</li>
+              <li>React</li>
+              <li>Code Review</li>
+            </ul>
+          </div>
+          <div class="project__thumb" style="--a:#00e0a4;--b:#ffd166">
+            <div class="mock">
+              <div class="mock__bar"><i></i><i></i><i></i></div>
+              <div class="mock__body">
+                <div class="m-grid">
+                  <div class="m-card">
+                    <div class="m-img"></div><b style="width:80%"></b><b style="width:50%"></b>
+                  </div>
+                  <div class="m-card">
+                    <div class="m-img"></div><b style="width:80%"></b><b style="width:50%"></b>
+                  </div>
+                  <div class="m-card">
+                    <div class="m-img"></div><b style="width:80%"></b><b style="width:50%"></b>
+                  </div>
+                  <div class="m-card">
+                    <div class="m-img"></div><b style="width:80%"></b><b style="width:50%"></b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="project__arrow">↗</span>
+        </a>
+        <div class="project__preview" aria-hidden="true"></div>
+      </div>
+      <div class="projects__more">
+        <button type="button" class="btn btn--ghost magnetic" id="moreProjects" aria-expanded="false"
+          data-cursor="Click">
+          <span class="more__t more__t--more">Xem thêm</span>
+          <span class="more__t more__t--less">Thu gọn</span>
+          <b class="more__count">+4</b>
+          <svg viewBox="0 0 24 24" width="18" height="18">
+            <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section experience">
+      <div class="section__head">
+        <span class="eyebrow">04 — Kinh nghiệm</span>
+        <h2 class="h2 split-lines">Hành trình <em>nghề nghiệp.</em></h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline__line"><i></i></div>
+        <div class="tl-item">
+          <span class="tl-date">08/2026 — Nay</span>
+          <h3>Backend Developer <small>@ Digitranz · KnowXHub</small></h3>
+          <p>Hệ thống LMS doanh nghiệp quy mô lớn triển khai cho Viettel. Thiết kế REST API bảo mật với Spring Security
+            &amp; Keycloak, tối ưu truy vấn và index Elasticsearch, code review cho team 10 người.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">01/2025 — 07/2026</span>
+          <h3>Fullstack Developer &amp; AI Engineer · Team Leader <small>@ Beetech Media · Beebot</small></h3>
+          <p>Dẫn dắt 12 thành viên, xây kiến trúc Agentic RAG với Hybrid Search, hạ tầng nhắn tin đa nền tảng 1.000+
+            người dùng đồng thời, nền tảng OCR/Vision và chăm sóc khách hàng 24/7 qua Zalo. Tăng tốc phát triển 40% nhờ
+            AI.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">01/2024 — 01/2025</span>
+          <h3>Fullstack Developer · Team Leader / PM <small>@ Beetech Media</small></h3>
+          <p>Quản lý Kansai Airport (10 người), BeeChat realtime với Spring Boot &amp; WebSocket/STOMP (12 người),
+            Lifenet-seimei với MicroCMS &amp; Next.js (6 người).</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">12/2020 — 12/2023</span>
+          <h3>Fullstack Developer &amp; Frontend Lead <small>@ Beetech Media</small></h3>
+          <p>Dẫn dắt team frontend 8–20 người cho Jacic, NTT, Kondate; tích hợp API Spring Boot, React, Laravel; phát
+            triển giao diện hệ sinh thái Mercari với Next.js, Nuxt.js và GraphQL.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">2018 — 2023</span>
+          <h3>Cử nhân Công nghệ thông tin <small>@ Đại học Điện lực</small></h3>
+          <p>Thủ khoa toàn trường, GPA 3.85/4.0 (Xuất sắc). Nhân viên của năm 2024 &amp; 2025, Nhân viên trẻ xuất sắc
+            2022, chứng chỉ Facebook Developer Circles 2020.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <span class="eyebrow">05 — Liên hệ</span>
+      <h2 class="contact__title split-lines">Cùng tạo ra<br /><em class="grad">điều tuyệt vời?</em></h2>
+      <a href="mailto:phuongthangcnpm4@gmail.com" class="contact__mail magnetic"
+        data-cursor="Email">phuongthangcnpm4@gmail.com</a>
+      <div class="socials">
+        <a href="https://github.com/phuongthang" target="_blank" rel="noopener" class="magnetic"
+          data-cursor="GitHub">GitHub</a>
+        <a href="https://www.facebook.com/phuongthanggg" target="_blank" rel="noopener" class="magnetic"
+          data-cursor="FB">Facebook</a>
+        <a href="mailto:phuongthangcnpm4@gmail.com" class="magnetic" data-cursor="Mail">Email</a>
+        <a href="assets/Phuong-Cong-Thang-Fullstack-Developer.pdf" download="Phuong-Cong-Thang-CV.pdf" class="magnetic"
+          data-cursor="CV">Tải CV</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Phương Công Thắng. Thiết kế &amp; lập trình bằng ♥</span>
+    <button class="footer__top magnetic" id="toTop" data-cursor="Lên">Về đầu trang ↑</button>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
